@@ -3,7 +3,7 @@
 ##Summary
 The NeighborGood app estimates safety, accessibility, and environment of neighborhoods within the city of Seattle, based on a user’s address. The vision and creation of the app was by Henry Bi, Alex Southwell, Carey LaMothe, and Dustin Wurtz.
 
-[Visit NeigborGood](http://healthy-home-search.herokuapp.com/)
+[Visit NeigborGood](https://neighborgood-seattle.herokuapp.com/)
 
 [Github Repo](https://github.com/honghaobi/healthy-home-search)
 
