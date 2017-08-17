@@ -2,19 +2,42 @@ var rp = require('request-promise');
 var env = require('require-env');
 
 module.exports = {
-  getAqi: (userInput) => {
-    userInput = userInput.replace(/\s+/g, '+');
+  getAqi: (location) => {
+    function formatDate(date) {
+      var d = new Date(),
+          month = "" + (d.getMonth() + 1),
+          day = "" + d.getDate(),
+          year = d.getFullYear()
+
+          if (month.length < 2) {
+            month = '0' + month;
+          }
+          if (day.length < 2) {
+            day = '0' + day;
+          }
+
+          return [year, month, day].join('-');
+     }
+
+     date = formatDate(new Date());
 
     var options = {
       method: 'GET',
-      uri:`https://api.breezometer.com/baqi/?location=${userInput}&fields=breezometer_aqi,dominant_pollutant_text,breezometer_description&key=${process.env.BREEZEKEY}`,
+      uri:`http://airnowapi.org/aq/forecast/latLong/?format=application/json&latitude=${location.lat}&longitude=${location.long}&date=${date}&distance=10&API_KEY=${process.env.AQIKEY}`,
 
       //not permanent fix to CA certificate issue
       rejectUnauthorized: false
     }
   return rp(options)
     .then( (aqiData) => {
-      return JSON.parse(aqiData);
+      validAqi = []
+      aqiData.forEach(point) {
+        if point.ParameterName == 'PM2.5' {
+          validAqi.push(point.AQI);
+        }
+      }
+      sum = validAqi.reduce(function(a, b) { return a + b; })
+      return sum/validAqi.length;
     })
     .catch( (err) => {
       console.log(err);

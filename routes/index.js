@@ -59,7 +59,7 @@ router.post('/', function(req, res, next) {
       req.session.crimeNum = allData.renderCrime[0];
     }));
 
-    allFunctions.push(environment.getAqi(req.body.userInput).then( (aqiData) => {
+    allFunctions.push(environment.getAqi(location).then( (aqiData) => {
       allData.renderAqi = aqiData;
       req.session.aqiNum = allData.renderAqi.breezometer_aqi;
     }));
