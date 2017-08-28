@@ -1,14 +1,14 @@
 
-#NeighborGood
+# NeighborGood
 
-##Summary
+## Summary
 The NeighborGood app estimates safety, accessibility, and environment of neighborhoods within the city of Seattle, based on a user’s address. The vision and creation of the app was by Henry Bi, Alex Southwell, Carey LaMothe, and Dustin Wurtz.
 
 [Visit NeigborGood](https://neighborgood-seattle.herokuapp.com/)
 
 [Github Repo](https://github.com/abkruse/healthy-home-search)
 
-###Technologies Used:
+### Technologies Used:
 
 - Node.js
 - Express
@@ -22,7 +22,7 @@ The NeighborGood app estimates safety, accessibility, and environment of neighbo
 - Heroku
 
 
-###APIs Used:
+### APIs Used:
 - Socrata
 - BreezoMeter
 - Walk Score
@@ -30,19 +30,19 @@ The NeighborGood app estimates safety, accessibility, and environment of neighbo
 
 NeighborGood is intended to be a user friendly tool for a user to research a particular neighborhood within the city of Seattle that they are interested in or gather more data on their current neighborhood. When a user submits an address, data will be acquired through over 15 Ajax calls to the above listed APIs. This data is placed into four different categories and given a score. The data and scores will be displayed through Jade and Express routing in a user friendly layout. The categories and their subtopics are listed below:
 
-###Community
+### Community
 - Schools
 - Parks
 - Restaurants
 - View Points
 - Cultural Spaces
 
-###Accessibility
+### Accessibility
 - Bus Stops
 - Parking Lots/Garages
 
 
-###Environment
+### Environment
 - Construction Permits for:
     - Single Family
     - Multi-family
@@ -51,7 +51,7 @@ NeighborGood is intended to be a user friendly tool for a user to research a par
     - Industrial
 - Air Quality
 
-###Safety (Crime within the last year)
+### Safety (Crime within the last year)
 - Crime Type
 - Day of Week
 - Day of Month
