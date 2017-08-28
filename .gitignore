@@ -3,3 +3,4 @@ bower_components/
 ../public/crime.json
 .DS_Store
 .env
+package-lock.json
