@@ -31,11 +31,11 @@ module.exports = {
   return rp(options)
     .then( (aqiData) => {
       validAqi = []
-      aqiData.forEach(point) {
-        if point.ParameterName == 'PM2.5' {
+      aqiData.forEach(function(point) {
+        if (point.ParameterName == 'PM2.5') {
           validAqi.push(point.AQI);
         }
-      }
+      });
       sum = validAqi.reduce(function(a, b) { return a + b; })
       return sum/validAqi.length;
     })
